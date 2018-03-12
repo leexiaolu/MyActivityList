@@ -16,6 +16,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".OneActivity" />
+        <activity
+            android:name=".TwoActivity"
+            android:persistableMode="persistAcrossReboots" />
+        <activity
+            android:name=".TestActivity"
+            android:label="Test Activity">
+            <intent-filter>
+                <action android:name="my_action" />
+
+                <category android:name="my_category" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".FirstActivity" />
+        <activity android:name=".SecondActivity" />
+        <activity android:name=".ThirdActivity" />
+        <activity android:name=".FourthActivity"></activity>
     </application>
 
 </manifest>
