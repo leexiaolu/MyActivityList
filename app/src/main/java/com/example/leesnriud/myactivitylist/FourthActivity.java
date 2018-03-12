@@ -10,6 +10,8 @@ import butterknife.OnClick;
 /**
  * android 数据传递
  * 后activity回传数据
+ * 过场动画
+ *
  */
 public class FourthActivity extends BaseActivity {
 

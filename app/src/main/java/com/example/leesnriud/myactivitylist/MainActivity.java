@@ -3,8 +3,12 @@ package com.example.leesnriud.myactivitylist;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -16,6 +20,15 @@ import butterknife.OnClick;
 public class MainActivity extends BaseActivity {
 
     private Intent intent;
+    // 定义一个变量，来标识是否退出
+    private static boolean isExit = false;
+    Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            isExit = false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,13 +90,35 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
                 break;
             case R.id.bt_four:
+                intent = new Intent(MainActivity.this,FullActivity.class);
+                startActivity(intent);
                 break;
             case R.id.bt_five:
+                intent = new Intent(MainActivity.this,DlgActivity.class);
+                startActivity(intent);
                 break;
             case R.id.bt_six:
+                intent = new Intent(MainActivity.this,CommonActivity.class);
+                startActivity(intent);
                 break;
             case R.id.bt_seven:
+                ActivityCollector.finishAll();
                 break;
         }
     }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (!isExit) {
+                isExit = true;
+                Toast.makeText(getApplicationContext(), "再按一次退出程序",
+                        Toast.LENGTH_SHORT).show();
+                // 利用handler延迟发送更改状态信息
+                mHandler.sendEmptyMessageDelayed(0, 2000);
+            } else {
+                System.exit(0);
+            }
+            return false;
+        }
+        return super.onKeyDown(keyCode, event);}
 }

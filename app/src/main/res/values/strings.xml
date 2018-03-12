@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyActivityList</string>
+    <string name="actdialog_title">diadog title</string>
+    <string name="activity_dialog">activity dialog</string>
 </resources>

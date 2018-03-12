@@ -37,19 +37,19 @@
         <Button
             android:id="@+id/bt_five"
             android:layout_margin="5dp"
-            android:text="onwindowfocuschanged"
+            android:text="对话风格activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/bt_six"
             android:layout_margin="5dp"
-            android:text="对话风格activity"
+            android:text="普通常见activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
             android:id="@+id/bt_seven"
             android:layout_margin="5dp"
-            android:text="更多"
+            android:text="关闭所有activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
