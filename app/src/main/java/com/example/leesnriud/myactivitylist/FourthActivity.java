@@ -30,5 +30,6 @@ public class FourthActivity extends BaseActivity {
         intent.putExtras(bundle);
         setResult(RESULT_OK,intent);
         finish();
+        overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
     }
 }

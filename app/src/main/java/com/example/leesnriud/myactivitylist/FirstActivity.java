@@ -48,6 +48,7 @@ public class FirstActivity extends BaseActivity {
             case R.id.bt_fourth:
                 intent =new Intent(FirstActivity.this,FourthActivity.class);
                 startActivityForResult(intent,0);
+                overridePendingTransition(R.anim.push_left_in,R.anim.push_left_out);
                 break;
         }
     }
